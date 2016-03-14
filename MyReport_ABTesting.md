@@ -48,7 +48,7 @@ not exactly equal. Hence we need to collect more data for the empirical analysis
 To calculate the number of samples required for each setup. I used the
 [Evan Miller's calcutor](http://www.evanmiller.org/ab-testing/sample-size.html).
 The values are calculated in the table below. alpha = 0.05 and beta = 0.2 is 
-chosen.
+chosen.i9h 
 
 |Metric|Probability|Dmin|Page views| Total Page Views|
 |------|-----------|-----|----------|-----------------|
@@ -56,8 +56,16 @@ chosen.
 |Retention | 0.53 | 0.01 | 39,115 | 4,741,212 |
 |Net Conversion | 0.109135| 0.0075 | 27413	|685,325 |
 
+Total Number of pageviews Required (max of all) = 4,741,212
 
 
+##### Duration vs. Exposure
+
+I decided to not use the Bonferroni Correction **Insert reason here for why 
+Bonferroni is not good for Correlated values** The statisctial significance
+level is chosen to *0.05* 
+
+**Calculating Duration**
 
 
 
