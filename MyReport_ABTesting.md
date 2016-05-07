@@ -14,7 +14,36 @@ might like to access the course materials for free. At this point, the
 student would have the option to continue enrolling in the free trial, or
 access the course materials for free instead.
 
+#### Metric Selection
 
+**Number of Cookies** -  *INVARIANT* This metric will not change with the experiment as the
+number of users visiting Udacity will not change as they have been not yet part
+of the experiment.
+
+**Number of user-ids** - *NONE* This will not be an invariant metric because the
+number of enrolled users may depend on the rendered page and we may see different
+values in the groups.
+This will also not be an evaluation metric because the information is redundant
+when better options are present.
+
+**Number of click** - *INVARIANT* Same argument as the number of cookies. The
+experiment has still not started so this metric will be invariant.
+
+** Click-through-probability ** - *INVARIANT* The user has still not seen the
+experiment so this will not be different in the control and experiment groups.
+
+**Gross conversion** - *EVALUATION* This is a metric we would like to evaluate.
+It depends on how the page has rendered after clicking the START FREE TRIAL button.
+We would like to know how showing a form with commitment questions changes the
+enrollment.
+
+**Retention** - *EVALUATION* Same as in case of gross conversion. We would like to
+find out if the users who see the *5 hours commitment* question have more or less
+rate of remaining enrolled.
+
+**Net Conversion** - *EVALUATION* This metric is the ration of Retention and
+Gross-Conversion. It gives us the big picture idea of how many users clicked
+the START FREE TRIAL button and how many remained.
 
 
 #### Measuring Variability
@@ -32,7 +61,7 @@ For Gross Conversion and Net Conversion the unit of diversion is same i.e.,
 cookie and also the unit of analysis is the person clicking on the
 "Start Free Trial" button. They are highly correlated but we cannot be sure that
 they are same for some cases where a person has checked the course on the
-personal computer but lated used the mobile device to click on the course. But
+personal computer but later used the mobile device to click on the course. But
 these cases may be seldom and hence it can assumed that the analytical standard
 deviation and the empirical standard deviation will be close.
 
@@ -54,7 +83,7 @@ chosen.i9h
 | ------                | ----------- | -----  | ---------- | ----------------- |
 | Gross Conversion Rate | 0.20625     | 0.01   | 25,835     | 645,875           |
 | Retention             | 0.53        | 0.01   | 39,115     | 4,741,212         |
-| Net Conversion        | 0.109135    | 0.0075 | 27413	     | 685,325           |
+| Net Conversion        | 0.109135    | 0.0075 | 27413	     | 685,325          |
 
 Total Number of pageviews Required (max of all) = 4,741,212
 
