@@ -221,7 +221,7 @@ I used the graphpad calculator for the Sign test (link in References).
  I have decided to not use Boneferroni Correction because our decision is based
  upon the **both** Gross Conversion and Net Conversion metrics. The hypothesis
  requires that both the effects be considered and we cannot go ahead with one
- metric alone. Hence Bonferroni correction will not be appropriate here. 
+ metric alone. Hence Bonferroni correction will not be appropriate here.
 
 
 ### Recommendation
@@ -235,15 +235,17 @@ The main points were
 1. Reducing the number of frustrated students as they didn't have enough time
 2. Without reducing the number of students to continue past the free trial.
 
-Our gross conversion was statistically and practically significant but the Net-
-conversion was not statistically significant which means the number of students
-to continue past the free trial were not reduced at a practical level. This completes
-the point 2.
+Based on the hypothesis it was predicted that the Gross Conversion Rate will go
+down which occured in the statistically and the practically significant way.
 
-In layman's terms we find that the test does not reduce the number of paid
-students significantly which was the goal.
+For Net Conversion rate and the second point above we find that the experiment
+was unable to keep the numbers of student continue past the free trail unaffected.
+Infact based upon the confidence interval for the Net conversion it is possible
+that the *5 hours commitment* might have increased the number of students who
+leave free trial.
 
-Based on this I recommend to adopt the changes of adding "5 or more hour" Recommendation.
+Based on the above observations and our experiments goal. I would recommend to **
+not launch** this experiment. 
 
 
 ### Follow up Experiment
