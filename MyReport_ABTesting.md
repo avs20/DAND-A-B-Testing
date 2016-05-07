@@ -102,14 +102,17 @@ Keeping retention rate as evaluation metric will make the experiment go
 much longer(4.7 million page views will take approx. 4 months on full
 site traffic). Hence I am dropping the retention rate as evaluation
 metric and use only Gross Conversion Rate and Net Conversion. This makes
-the total number of pageviews to **685,325**.
+the total number of page views to **685,325**.
 
 **Exposure**
 
-I chose to redirect 50% of the traffic for this experiment which translates
-to 25% in control group and 25% in experiment group. This will keep the
-experiment duration to around 1 month which is effective to detect
-the effects.
+The exposure of the experiment is based on the risk involved. Since for the
+experiment only a small reminder is shown about the time commitment. There will
+be no physical harm to the users. Also since no sensitive information is being
+collected therefore a 100% exposure is safe.
+
+For the number of page views per day (40000) and a 100% exposure, it would take
+us around 18 days for the experiment.
 
 I chose not to use the Bonferroni Correction because the two metrics Gross Conversion
 and Net Conversion are highly correlated.
