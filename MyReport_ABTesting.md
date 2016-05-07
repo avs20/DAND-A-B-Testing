@@ -1,4 +1,4 @@
-## A/B Testing 
+## A/B Testing
 ### Project Report by Ashutosh Singh
 -------------------------------------
 
@@ -29,15 +29,15 @@ access the course materials for free instead.
 |Net Conversion |     0.0156   |
 
 For Gross Conversion and Net Conversion the unit of diversion is same i.e.,
-cookie and also the unit of analysis is the person clicking on the 
+cookie and also the unit of analysis is the person clicking on the
 "Start Free Trial" button. They are highly correlated but we cannot be sure that
-they are same for some cases where a person has checked the course on the 
-personal computer but lated used the mobile device to click on the course. But 
+they are same for some cases where a person has checked the course on the
+personal computer but lated used the mobile device to click on the course. But
 these cases may be seldom and hence it can assumed that the analytical standard
 deviation and the empirical standard deviation will be close.
 
 For Net Retention the unit of diversion (cookie that clicked on the Start Free
-Trial button) and the unit of analysis (the user-id of the person enrolled) are 
+Trial button) and the unit of analysis (the user-id of the person enrolled) are
 not exactly equal. Hence we need to collect more data for the empirical analysis.
 
 
@@ -47,8 +47,8 @@ not exactly equal. Hence we need to collect more data for the empirical analysis
 
 To calculate the number of samples required for each setup. I used the
 [Evan Miller's calcutor](http://www.evanmiller.org/ab-testing/sample-size.html).
-The values are calculated in the table below. alpha = 0.05 and beta = 0.2 is 
-chosen.i9h 
+The values are calculated in the table below. alpha = 0.05 and beta = 0.2 is
+chosen.i9h
 
 | Metric                | Probability | Dmin   | Page views | Total Page Views  |
 | ------                | ----------- | -----  | ---------- | ----------------- |
@@ -61,24 +61,24 @@ Total Number of pageviews Required (max of all) = 4,741,212
 
 ##### Duration vs. Exposure
 
-I decided to not use the Bonferroni Correction **Insert reason here for why 
+I decided to not use the Bonferroni Correction **Insert reason here for why
 Bonferroni is not good for Correlated values** The statisctial significance
-level is chosen to *0.05* 
+level is chosen to *0.05*
 
 **Calculating Duration**
 
-Keeping retention rate as evaluation metric will make the experiment go 
+Keeping retention rate as evaluation metric will make the experiment go
 much longer(4.7 million page views will take approx. 4 months on full
 site traffic). Hence I am dropping the retention rate as evaluation
 metric and use only Gross Conversion Rate and Net Conversion. This makes
-the total number of pageviews to **685,325**. 
+the total number of pageviews to **685,325**.
 
 **Exposure**
 
 I chose to redirect 50% of the traffic for this experiment which translates
-to 25% in control group and 25% in experiment group. This will keep the 
-experiment duration to around 1 month which is plausible to detect 
-the effects. 
+to 25% in control group and 25% in experiment group. This will keep the
+experiment duration to around 1 month which is plausible to detect
+the effects.
 
 ##### Experiment Analysis
 
@@ -90,7 +90,7 @@ checks. Following table shows the process and values for this
 ####### Number of Cookies
 
 |    Data | Values    |
-----------|----------
+|----------|----------|
 | Control Group | 345543 |
 | Experiment Group | 344660 |
 |Standard Deviation | *sqrt(0.5 * (1-0.5) / (345543 + 344660))* = **-0.0006018**|
@@ -99,13 +99,15 @@ checks. Following table shows the process and values for this
 |upper bound | *0.5 + 0.0011797* = **0.5012** |
 |observed value | *345543/(345543+344660)* = **0.5006**|
 
-***The observed value is between the 95 %CI  hence this invariant 
+***The observed value is between the 95 %CI  hence this invariant
 metric passes the sanity check.***
 
-####### Number of clicks on "Start Free Trial"
+
+###### Number of clicks on "Start Free Trial"
+
 
 |    Data | Values    |
-----------|----------
+| ----------|----------|
 | Control Group | 28378 |
 | Experiment Group | 28325 |
 |Standard Deviation | *sqrt(0.5 * (1-0.5) / (28378 + 28325))* = **-0.0021**|
@@ -114,24 +116,25 @@ metric passes the sanity check.***
 |upper bound | *0.5 + 0.0041* = **0.5041** |
 |observed value | *28378/(28378+28325)* = **0.5005**|
 
-***The observed value is between the 95 %CI  hence this invariant 
+***The observed value is between the 95 %CI  hence this invariant
 metric passes the sanity check.***
 
 
-####### Click-through-probability on "start free trial"
+##### Click-through-probability on "start free trial"
 
-###This section needs review
+### This section needs review
+
 |    Data | Values    |
-----------|----------
-| Control Group | 28378 |
-| Experiment Group | 28325 |
+|----------|----------|
+|Control Group | 28378 |
+|Experiment Group | 28325 |
 |Standard Deviation | *sqrt(0.5 * (1-0.5) / (28378 + 28325))* = **-0.0021**|
 |Margin of Error| *1.96 * 0.0021* = **0.0041** |
 |lower bound | *0.5 - 0.0041* = **0.4959**|
 |upper bound | *0.5 + 0.0041* = **0.5041** |
 |observed value | *28378/(28378+28325)* = **0.5005**|
 
-***The observed value is between the 95 %CI  hence this invariant 
+***The observed value is between the 95 %CI  hence this invariant
 metric passes the sanity check.***
 
 ----------------------------------------------------------------
@@ -139,3 +142,126 @@ metric passes the sanity check.***
 
 #### Effect Size Tests
 
+Since we are using Gross Conversion and Net conversion as the evaluation metrics
+following are the confidence intervals for thos.
+
+|Metric | Lower bound |  Upper Bound | Statistical significance | Practical significance |  
+|-------|-------------|--------------| -------------------------|-------------------------|
+|Gross Conversion | -0.0291 | -0.0120|  Yes | Yes |
+|Net Conversion   | -0.0016 | 0.0019  | No | No |
+
+Statistical significance is determined if the confidence interval does not contain
+0 and Practical significance is determined if the interval does not include
+*d-min* of 0.01 as decided earlier.
+
+#### Sign Tests
+
+I used the graphpad calculator for the Sign test (link in References).
+
+1. **Gross Conversion**
+
+   |Calculation |  Value |
+   |------------|---------|
+   |# of successes | 4    |
+   |# of Trials    |23    |
+   |Probability    | 0.5  |
+   |p-value ( 2-tailed ) | 0.0026 |
+
+ Since the p-value is less than the alpha value o 0.05, hence the difference is
+ statistically significant .
+
+2. **Net conversion**
+
+ |Calculation |  Value |
+ |------------|---------|
+ |# of successes | 10    |
+ |# of Trials    |23    |
+ |Probability    | 0.5  |
+ |p-value ( 2-tailed ) | 0.6776 |
+
+ The p-value for Net conversion is greater than the alpha value of 0.05, hence
+ this difference is not statistically significant.
+
+#### Summary
+
+ I have not used Boneferroni Correction. The reason for this is that the Boneferroni
+ correction will make the tests more conservative and there is also a high
+ correlation between the metrics. We are only testing two metrics and applying
+ the correction may not make any significant discovery.
+
+ ### Recommendation
+
+The hypothesis of the experiment was
+
+*The hypothesis was that this might set clearer expectations for students upfront, thus reducing the number of frustrated students who left the free trial because they didn't have enough time—without significantly reducing the number of students to continue past the free trial and eventually complete the course. If this hypothesis held true, Udacity could improve the overall student experience and improve coaches' capacity to support students who are likely to complete the course.*
+
+The main points were
+
+1. Reducing the number of frustrated students as they didn't have enough time
+2. Without reducing the number of students to continue past the free trial.
+
+Our gross conversion was statistically and practically significant but the Net-
+conversion was not statistically significant which means the number of students
+to continue past the free trial were not reduced at a practical level. This completes
+the point 2.
+
+In layman's terms we find that the the test does not reduce the number of paid
+students significantly which was the goal.
+
+Based on this I recommend to adopt the changes of adding "5 or more hour" Recommendation.
+
+
+### Follow up Experiment
+
+To reduce the number of frustrated students I would create a follow up experiment
+as follows.
+
+1. A pre-orientation course to complete before enrolling in a Nanodegree course
+instead of the free trial button.
+
+#### Hypothesis
+This course will give them the feel of enrolling in a Nanodegree and will ask
+from them to complete in a set time of 7-14 days ( the current trial period ).
+
+Even though the current trial period helps students in getting how to go
+about the Nanodegree but the courses are big enough to get a sense of completion
+to achieve during the trial period. Completing a course will give them more
+confidence and energy to continue the streak and they can also evaluate themselves.
+This course can be non-evaluation based where the students can just post their
+small projects on the forum for other to critique on.
+
+For Udacity this will give us a quantified metric if the student can genuinely
+invest more than 5 hours per week and may increase the conversion as the students
+will be now oriented with the whole process of the Nanodegree.
+
+**Initial Unit of diversion** Cookies - Once enrolled the progress can be
+tracked from the enrolled id.
+
+**Evaluation Metrics**
+Based on the hypothesis there will be two evaluation metrics :
+
+1. Gross-Conversion :  The conversion rate from the users who see the Button
+to enrolled users in pre-orientation. This will help us to quantify does the Nanodegree experience
+helps to increase the enrollment.
+2. Net-Conversion  : The number of users who enrolled after taking the pre-orientation
+course. This can be tracked by the User-ids who have enrolled in the pre-orientation
+course and finally to the Nanodegree.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### References
+
+[Graphpad Sign Test calcutor](http://graphpad.com/quickcalcs/binomial2/)
