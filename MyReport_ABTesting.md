@@ -50,11 +50,11 @@ To calculate the number of samples required for each setup. I used the
 The values are calculated in the table below. alpha = 0.05 and beta = 0.2 is 
 chosen.i9h 
 
-|Metric|Probability|Dmin|Page views| Total Page Views|
-|------|-----------|-----|----------|-----------------|
-|Gross Conversion Rate | 0.20625 | 0.01 | 25,835 | 645,875  |
-|Retention | 0.53 | 0.01 | 39,115 | 4,741,212 |
-|Net Conversion | 0.109135| 0.0075 | 27413	|685,325 |
+| Metric                | Probability | Dmin   | Page views | Total Page Views  |
+| ------                | ----------- | -----  | ---------- | ----------------- |
+| Gross Conversion Rate | 0.20625     | 0.01   | 25,835     | 645,875           |
+| Retention             | 0.53        | 0.01   | 39,115     | 4,741,212         |
+| Net Conversion        | 0.109135    | 0.0075 | 27413	     | 685,325           |
 
 Total Number of pageviews Required (max of all) = 4,741,212
 
@@ -67,5 +67,75 @@ level is chosen to *0.05*
 
 **Calculating Duration**
 
+Keeping retention rate as evaluation metric will make the experiment go 
+much longer(4.7 million page views will take approx. 4 months on full
+site traffic). Hence I am dropping the retention rate as evaluation
+metric and use only Gross Conversion Rate and Net Conversion. This makes
+the total number of pageviews to **685,325**. 
 
+**Exposure**
+
+I chose to redirect 50% of the traffic for this experiment which translates
+to 25% in control group and 25% in experiment group. This will keep the 
+experiment duration to around 1 month which is plausible to detect 
+the effects. 
+
+##### Experiment Analysis
+
+###### Sanity Checks
+
+For each metric which is chosen as invariant metric I perform the sanity
+checks. Following table shows the process and values for this
+
+####### Number of Cookies
+
+|    Data | Values    |
+----------|----------
+| Control Group | 345543 |
+| Experiment Group | 344660 |
+|Standard Deviation | *sqrt(0.5 * (1-0.5) / (345543 + 344660))* = **-0.0006018**|
+|Margin of Error| *1.96 * 0.0006018* = **0.0011796** |
+|lower bound | *0.5 - 0.0011797* = **0.4988**|
+|upper bound | *0.5 + 0.0011797* = **0.5012** |
+|observed value | *345543/(345543+344660)* = **0.5006**|
+
+***The observed value is between the 95 %CI  hence this invariant 
+metric passes the sanity check.***
+
+####### Number of clicks on "Start Free Trial"
+
+|    Data | Values    |
+----------|----------
+| Control Group | 28378 |
+| Experiment Group | 28325 |
+|Standard Deviation | *sqrt(0.5 * (1-0.5) / (28378 + 28325))* = **-0.0021**|
+|Margin of Error| *1.96 * 0.0021* = **0.0041** |
+|lower bound | *0.5 - 0.0041* = **0.4959**|
+|upper bound | *0.5 + 0.0041* = **0.5041** |
+|observed value | *28378/(28378+28325)* = **0.5005**|
+
+***The observed value is between the 95 %CI  hence this invariant 
+metric passes the sanity check.***
+
+
+####### Click-through-probability on "start free trial"
+
+###This section needs review
+|    Data | Values    |
+----------|----------
+| Control Group | 28378 |
+| Experiment Group | 28325 |
+|Standard Deviation | *sqrt(0.5 * (1-0.5) / (28378 + 28325))* = **-0.0021**|
+|Margin of Error| *1.96 * 0.0021* = **0.0041** |
+|lower bound | *0.5 - 0.0041* = **0.4959**|
+|upper bound | *0.5 + 0.0041* = **0.5041** |
+|observed value | *28378/(28378+28325)* = **0.5005**|
+
+***The observed value is between the 95 %CI  hence this invariant 
+metric passes the sanity check.***
+
+----------------------------------------------------------------
+
+
+#### Effect Size Tests
 
