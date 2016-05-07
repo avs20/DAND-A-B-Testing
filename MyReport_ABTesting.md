@@ -218,10 +218,11 @@ I used the graphpad calculator for the Sign test (link in References).
 
 #### Summary
 
- I have not used Boneferroni Correction. The reason for this is that the Boneferroni
- correction will make the tests more conservative and there is also a high
- correlation between the metrics. We are only testing two metrics and applying
- the correction may not serve its purpose..
+ I have decided to not use Boneferroni Correction because our decision is based
+ upon the **both** Gross Conversion and Net Conversion metrics. The hypothesis
+ requires that both the effects be considered and we cannot go ahead with one
+ metric alone. Hence Bonferroni correction will not be appropriate here. 
+
 
 ### Recommendation
 
