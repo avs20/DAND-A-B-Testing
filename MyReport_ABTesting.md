@@ -48,7 +48,7 @@ dropped are already filtered.
 Gross-Conversion. It gives us the big picture idea of how many users clicked
 the START FREE TRIAL button and how many remained. This metric should increase
 Retention will increase and Gross conversion will decrease and the ratio will
-increase. 
+increase.
 
 
 #### Measuring Variability
@@ -62,19 +62,16 @@ increase.
 |Retention        |	  0.05494		|
 |Net Conversion |     0.0156   |
 
-For Gross Conversion and Net Conversion the unit of diversion is same i.e.,
-cookie and also the unit of analysis is the person clicking on the
-"Start Free Trial" button. The unit of diversion and the analysis are highly correlated
-but may not be exactly the same as a user first time just checks the page and
-then returns sometime afterwards to enroll and this time the cookie may be changed.
-Due to the high correlation the analytical and empirical standard deviation will be
-close and this can be authenticated with the more data capturing.
 
+
+For Gross Conversion and Net Conversion the unit of analysis is same i.e., cookie.
+Since the unit of diversion is also cookie hence the analytical estimate will
+match the empirical standard deviation from the experiment.
 
 For Net Retention the unit of diversion (cookie that clicked on the Start Free
 Trial button) and the unit of analysis (the user-id of the person enrolled) are
-not equal. Hence the analytical estimate and the empirical estimate will
-be different for Net Retention.
+ different. Hence the analytical estimate will be different from empirical
+ standard deviation for Retention.
 
 
 #### Sizing
