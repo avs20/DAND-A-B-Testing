@@ -22,9 +22,9 @@ of the experiment.
 
 **Number of user-ids** - *NONE* This will not be an invariant metric because the
 number of enrolled users may depend on the rendered page and we may see different
-values in the groups.
-This will also not be an evaluation metric because the information is redundant
-when better options are present( See below ).
+values in the groups. This metric can be an evaluation metric but it is just a
+number and Gross Conversion does a better job at counting the number of users and
+also the affect of the *5 hour commitment question*.
 
 **Number of click** - *INVARIANT* Same argument as the number of cookies. The
 experiment has still not started so this metric will be invariant.
@@ -35,15 +35,20 @@ experiment so this will not be different in the control and experiment groups.
 **Gross conversion** - *EVALUATION* This is a metric we would like to evaluate.
 It depends on how the page has rendered after clicking the START FREE TRIAL button.
 We would like to know how showing a form with commitment questions changes the
-enrollment.
+enrollment. Based on the hypothesis this metric will be *lower* as the user likely
+to drop after seeing the question will be filtered.
 
 **Retention** - *EVALUATION* Same as in case of gross conversion. We would like to
 find out if the users who see the *5 hours commitment* question have more or less
-rate of remaining enrolled.
+rate of remaining enrolled. This will become higher according to hypothesis as
+the those who have enrolled would be less likely to drop and those who would have
+dropped are already filtered.
 
 **Net Conversion** - *EVALUATION* This metric is the ratio of Retention and
 Gross-Conversion. It gives us the big picture idea of how many users clicked
-the START FREE TRIAL button and how many remained.
+the START FREE TRIAL button and how many remained. This metric should increase
+Retention will increase and Gross conversion will decrease and the ratio will
+increase. 
 
 
 #### Measuring Variability
