@@ -245,45 +245,52 @@ that the *5 hours commitment* might have increased the number of students who
 leave free trial.
 
 Based on the above observations and our experiments goal. I would recommend to **
-not launch** this experiment. 
+not launch** this experiment.
 
 
 ### Follow up Experiment
 
-To reduce the number of frustrated students I would create a follow up experiment
-as follows.
 
-1. A pre-orientation course to complete before enrolling in a Nanodegree course
-instead of the free trial button.
+The goal of the follow up experiment is to reduce the frustration of the free
+trial students. Why are students frustrated?
 
-#### Hypothesis
-This course will give them the feel of enrolling in a Nanodegree and will ask
-from them to complete in a set time of 7-14 days ( the current trial period ).
+1. They didn't understand the course materials.
+2. They slack off after some time as in new year's resolution
+3. Unlike the college based education where we can see our companions move
+forward daily there is no companion in online education.
+4. They can't devote enough time for the Nanodegree.
 
-Even though the current trial period helps students in getting how to go
-about the Nanodegree but the courses are big enough to get a sense of completion
-to achieve during the trial period. Completing a course will give them more
-confidence and energy to continue the streak and they can also evaluate themselves.
-This course can be non-evaluation based where the students can just post their
-small projects on the forum for other to critique on and thus not increase the
-load on Udacity coaches.
+Based on above points I propose the following experiment
 
-For Udacity this will give us a quantified metric if the student can genuinely
-invest more than 5 hours per week and may increase the conversion as the students
-will be now oriented with the whole process of the Nanodegree.
+*Give users notifications/space to interact more during the trial period like using
+forums, online chat channel, etc. A section on the course page dedicated to directly
+interact with users on the same course. A link to slack channel will be great.
+Or if the user is taking more time to solve a problem then pop up a notification
+on the side to interact with others. *
 
-**Initial Unit of diversion** Cookies - Once enrolled the progress can be
-tracked from the enrolled id.
+My hypothesis is that there may be many reasons for the frustration and as
+discussed above many times no part of companionship will make a student aloof.
+When a human being interacts with others often then a social feeling
+ emerges and makes one a part of community.
+Interaction with other students will make the user more frank to be communicating
+with others and a group/cohort bonding may emerge.
 
-**Evaluation Metrics**
-Based on the hypothesis there will be two evaluation metrics :
+**Unit of diversion :** *user ids who have enrolled in the free trial*. Since the
+experiment will start after the enrollment and the user has logged in, we
+can easily divert them to either the control and experiment group.
 
-1. Gross-Conversion :  The conversion rate from the users who see the Button
-to enrolled users in pre-orientation. This will help us to quantify does the Nanodegree experience
-helps to increase the enrollment.
-2. Net-Conversion  : The number of users who enrolled after taking the pre-orientation
-course. This can be tracked by the User-ids who have enrolled in the pre-orientation
-course and finally to the Nanodegree.
+Invariant Metrics :
+
+* *Number of user ids to complete checkout and enroll in free trial* :
+Since this experiment will activate on user login
+hence the number of user ids enrolled will be unaffected by this experiment.
+
+Evaluation Metrics :
+
+* *Retention Rate* : Retention rate will be the best metric for this experiment
+as this can quantify the number of users who checkout and kept enrolled.
+
+The Retention rate as evaluation metric will make the experiment last longer.
 
 
 #### References
